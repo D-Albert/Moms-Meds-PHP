@@ -1,0 +1,68 @@
+/* Headers and such */
+
+.pageNumber {
+	float: right;
+}
+
+.datePrinted {
+	float: right;
+}
+
+/* Medications list */
+
+/* Each item within the list */
+.medicationRow {
+	border: 1px solid black;
+	border-radius: 15px;
+	max-width: 600px;
+	margin: 2px 5px;
+	padding: 5px;
+}
+
+/* Entries for items the person isn't taking. */
+.medicationRow.notCurrentlyTaking {
+	display: none;
+}
+
+/* The portion of a medication entry that covers how much to take and when (AKA timing row). */
+.medicationDosageItem {
+	border: 1px solid black;
+	min-width: 100px;
+	min-height: 25px;
+	text-align: center;
+	vertical-align: center;
+	flex-grow: 1;
+	padding: 5px;
+}
+
+/* The Morning and Bedtime columns within the timing row. */
+.timingMorning, .timingBed {
+	flex-grow: 1;
+}
+
+/* The Other column within the timing row. */
+.timingOther {
+	flex-grow: 2;
+}
+
+/* The amount of guaranteed white space within each item for handwriting notes. */
+.medicationBlankRow {
+	min-height: 40px;
+}
+
+/* General Purpose */
+
+.flexRow {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+}
+
+/* Print-Specific Stuff */
+
+@media print {
+	.medicationRow {
+		break-inside: avoid;
+	}
+}
